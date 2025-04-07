@@ -1,106 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="description" content="Educational Games for learning K-12 students!">
-    <meta name="keywords" content="educational games, learning games, HTML5 games, school-friendly games, online learning, interactive learning, math games, logic puzzles, problem-solving, educational technology, student resources, educational entertainment, fun learning activities, safe for school, unblocked games">
-    <meta name="author" content="Educators Rising">
-    <meta charset="UTF-8">
-    <meta name="icon" >
-    <link rel="icon" type="image/x-icon" href="pictures/book.png">
-    <title>EducationGo!</title>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1978567385904704" crossorigin="anonymous"></script>
-</head>
-<body>
-    <style>
-        html {
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        }
-        .heading {
-            text-align: center;
-            padding: 20%;
-            align-items: center;
-            align-content: center;
-            align-self: center;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Educational Games for learning K-12 students!">
+  <meta name="keywords" content="educational games, learning games, HTML5 games, school-friendly games, online learning">
+  <meta name="author" content="Educators Rising">
+  <title>EducationGo!</title>
+  <link rel="icon" type="image/x-icon" href="pictures/book.png">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1978567385904704" crossorigin="anonymous"></script>
+  <style>
+    :root {
+      --primary-color: #4CAF50;
+      --secondary-color: #f0f0f0;
+      --accent-color: #ff9800;
+      --text-color: #333;
+      --radius: 12px;
+    }
 
-        }
-        .searchBox {
-            position: fixed;
-            left: 25%;
-            top: 4%;
-            border-radius: 10px;
-            width: 50%;
-            text-align: center;
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        }
-        img.book {
-            width: 30%;
-        }
-        .learngrid {
-            display: grid;
-            border: 5px solid rgba(83, 83, 83, 0.8);
-            grid-template-columns: auto auto;
-        }
-        .learngriditem{
-            padding: 10%;
-            border: 1px solid rgba(0, 0, 0, 0.8);
-        }
+    body {
+      font-family: 'Rubik', sans-serif;
+      background-color: #fafafa;
+      color: var(--text-color);
+      line-height: 1.6;
+      padding-top: 80px;
+    }
 
+    .headbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: white;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 999;
+      transition-duration: 500ms;
+    }
 
-        a img{
-            width: 100%;
-            height: 100%;
-            transition-duration: 500ms;
-        }
+    .headbar:hover{
+        background-color: #d6d6d6;
+    }
 
-        a img:hover{
-            scale: 1.2;
-        }
+    .headbar img {
+      height: 50px;
+    }
 
-        #item {
-            display: none;
-        }
-        select {
-            text-align: center;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            font-size: larger;
-            width: 100%;
-            border-bottom: 2px solid rgba(0, 0, 0, 0.8);
-            border-top: none;
-            border-left: none;
-            border-right: none;
-            margin-bottom: 5px;
-        }
-        div.left {
-            text-align: left;
-        }
-        .headbar {
-            position: fixed;
-        }
-        .headbar img {
-            width: 20%;
-        }
-        div h3 {
-            margin-left: 2%;
-        }
-        a {
-            text-decoration: none;
-        }
-        .contact {
+    .headbar h3 {
+      margin-left: 1rem;
+    }
+
+    .searchBox {
+      flex: 1;
+      margin: 0 1rem;
+      padding: 0.6rem 1rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: var(--radius);
+    }
+
+    .headbar a {
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .heading {
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .heading img.book {
+      max-width: 150px;
+    }
+
+    .learngrid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1rem;
+      padding: 2rem;
+    }
+
+    .leargriditem {
+      background-color: var(--secondary-color);
+      padding: 1rem;
+      border-radius: var(--radius);
+      transition: transform 0.3s ease;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .leargriditem:hover {
+      transform: scale(1.05);
+    }
+
+    .leargriditem img {
+      width: 100%;
+      border-radius: var(--radius);
+    }
+
+    select {
+      margin: 2rem auto;
+      display: block;
+      padding: 0.5rem;
+      font-size: 1rem;
+      border-radius: var(--radius);
+      border: 1px solid #ccc;
+    }
+
+    .announcements {
+      background: var(--accent-color);
+      padding: 1rem;
+      margin: 2rem auto;
+      border-radius: var(--radius);
+      max-width: 700px;
+      color: white;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #eee;
+      margin-top: 3rem;
+    }
+    .contact {
             transition-duration: 500ms;
         }
         .contact:target {
-            opacity: 0;
-            scale: 0.2;
+            opacity: 1;
+            scale: 1;
 
         }
         .contact:target ::after{
             display: none;
         }
-
-
-.contact {
+        .contact {
   left: 25%;
-  top: 0%;
+  top: 10%;
   position: fixed;
   width: 60%;
   height: 70%;
@@ -110,6 +154,8 @@
   transition-duration: 500ms;
   z-index: 1;
   text-align: center;
+  opacity: 0;
+  scale: 0;
 
 }
 .contact a{
@@ -123,83 +169,92 @@
   margin-top: 10%;
   text-align: center;
 }
-.square {
-    width: 14%;
-    height: 17%;
-    background-color: bisque;
-    left: -2%;
-    top: 85%;
-    z-index: -1;
-    position: absolute;
-    transition-duration: 600ms;
-    transform: translateX(-100%);
-}
-.headbar a:hover + .square {
-    transform: translateX(0);
-}
-.announcements{
+#item{
     display: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+#searchResults {
+    text-align: center;
+    text-decoration: none;
 
 }
-.ah1:hover + .announcements {
-    display: block;
-}
-    </style>
-    <div class="headbar">
-        <img src="pictures/book.png" alt="">
-        <div class="left"><h3>Education Go!</h3></div>
-        <input type="text" id="searchBox" class="searchBox" placeholder="Search games..." onkeyup="searchGames()">
-        <div id="searchResults"></div>
-        <a href="about.html" style="color: black;">About</a>
-        <div class="square"></div>
-    </div>
+#searchResults {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      padding: 1rem;
+    }
+
+    .search-result-item {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: var(--radius);
+      padding: 1rem;
+      width: 220px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s;
+    }
+.search-result-item:hover {
+      transform: translateY(-5px);
+    }
+
+    .search-result-item a {
+      color: #333;
+      font-weight: bold;
+      text-decoration: none;
+    }
 
 
-    <div class="contact" id="contact">
-        <br>
-        <h1>Contact/Feedback</h1>
-        <h4>For questions, requests or general thoughts</h4>
-        <hr>
-        <h3>Contact Box</h3><!-- Start BawkBox Code--><script data-sil-id="66eb425a67c1b4001e994730">var loadWidget = function() { var d = document, w = window, l = window.location,p = l.protocol == "file:" ? "http://" : "//"; if (!w.WS) w.WS = {}; c = w.WS; var m=function(t, o){ var e = d.getElementsByTagName("script"); e=e[e.length-1]; var n = d.createElement(t); if (t=="script") {n.async=true;} for (k in o) n[k] = o[k]; e.parentNode.insertBefore(n, e)}; m("script", { src: p + "bawkbox.com/widget/contact/66eb425a67c1b4001e994730?page=" +encodeURIComponent(l+''), type: 'text/javascript' }); c.load_net = m; }; if(window.Squarespace){ document.addEventListener('DOMContentLoaded', loadWidget); setTimeOut(function(){ document.addEventListener('DOMContentLoaded', loadWidget); }, 3000) } else { loadWidget() } </script><div class="sil-widget-contact sil-widget" id="sil-widget-66eb425a67c1b4001e994730"><a href="//bawkbox.com/install/contact">Contact Box</a></div><!-- End BawkBox Code-->
-        <br><br>
-        <div class="exit"><a href="#contact"><h4>Go back</h4></a></div>
 
-      </div>
+  </style>
+</head>
+<body>
+  <div class="headbar">
+    <img src="pictures/book.png" alt="Book logo">
+    <h3>Education Go!</h3>
+    <input type="text" id="searchBox" class="searchBox" placeholder="Search games..." onkeyup="searchGames()">
 
-    <div class="heading">
+    <a href="#contact">Contact</a>
 
-        <img src="pictures/book.png" alt="" class="book">
+  </div>
+
+  <div class="rbox">
+    <div id="searchResults"></div>
+  </div>
+
+  <div class="heading">
+    <img src="pictures/book.png" alt="Book icon" class="book">
     <h1>Education Go!</h1>
-        <hr>
-        <h2>Additional Links:</h2>
-        <a href="http://list.logansgames.org">List of all of the educational activities</a><br>
-        <a href="http://owner.logansgames.org">About the dev</a>
+    <p>Fun educational games for students of all ages!</p>
+  </div>
 
-        <hr>
-        <h2 class="ah1">Announcements</h2>
+  <div class="contact" id="contact">
+    <br>
+    <h1>Contact/Feedback</h1>
+    <h4>For questions, requests or general thoughts</h4>
+    <hr>
+    <h3>Contact Box</h3><!-- Start BawkBox Code--><script data-sil-id="66eb425a67c1b4001e994730">var loadWidget = function() { var d = document, w = window, l = window.location,p = l.protocol == "file:" ? "http://" : "//"; if (!w.WS) w.WS = {}; c = w.WS; var m=function(t, o){ var e = d.getElementsByTagName("script"); e=e[e.length-1]; var n = d.createElement(t); if (t=="script") {n.async=true;} for (k in o) n[k] = o[k]; e.parentNode.insertBefore(n, e)}; m("script", { src: p + "bawkbox.com/widget/contact/66eb425a67c1b4001e994730?page=" +encodeURIComponent(l+''), type: 'text/javascript' }); c.load_net = m; }; if(window.Squarespace){ document.addEventListener('DOMContentLoaded', loadWidget); setTimeOut(function(){ document.addEventListener('DOMContentLoaded', loadWidget); }, 3000) } else { loadWidget() } </script><div class="sil-widget-contact sil-widget" id="sil-widget-66eb425a67c1b4001e994730"><a href="//bawkbox.com/install/contact">Contact Box</a></div><!-- End BawkBox Code-->
+    <br><br>
+    <div class="exit"><a href=""><h4>Go back</h4></a></div>
 
-        <div class="announcements"><p><b>10/22/2024: </b>You can now watch your favorite movies and tv shows! Search for "movies"!</p><p>Please contact me if you want anything added thanks!</p>
-        <p><b>10/30/2024: </b>Soccer bros added (2 player)</p>
-        <p><b>11/6/2024: </b>Added Poker as per your requests</p>
-        <p><b>1/17/2025: </b></p> <p>-Updated the free movies and shows page; There are two streaming platforms now</p>
-        <p>-Added two new subdomains; <a href="https://list.logansgames.org">list.logansgames.org</a>, <a href="https://owner.logansgames.org">owner.logansgames.org</a></p>
-        <p>The first one is a list of all of the Educational activities and the second link is a WIP "About The Dev" page</p>
-        <p><b>1/29/2025: </b>Fmovies replaced with <a href="free-movies-and-shows/popcorn.html">Popcorn movies</a> which is the best by far streaming platform with <b>NO ADS</b></p>
-    </div>
-        <hr><br>
+  </div>
 
-    <p>An educational platform for students learning though fun games!</p>
-    <p>Free learning games K-12!</p>
-<hr>
-<br>
-    <select name="Catagory" id="catagory">
-        <option value="">Math</option>
-        <option value="">Reading</option>
-        <option value="">Social Studies</option>
-        <option value="">English</option>
-    </select>
-    <div class="learngrid">
-        <div class="leargriditem"><a href="main.html"><img src="pictures/game1.png" alt=""></a></div>
+  <select name="category">
+    <option value="">Select Subject</option>
+    <option value="math">Math</option>
+    <option value="reading">Reading</option>
+    <option value="science">Science</option>
+    <option value="english">English</option>
+  </select>
+
+  <div class="learngrid">
+    <div class="leargriditem"><a href="main.html"><img src="pictures/game1.png" alt=""></a></div>
         <div class="leargriditem"><a href="krunkerio/"><img src="pictures/game2.png" alt=""></a></div>
         <div class="leargriditem"><a href="minecraft1.8/EaglercraftX_1.8_u32_Offline_Signed.html"><img src="pictures/game3.png" alt=""></a></div>
         <div class="leargriditem"><a href="smashcarts/"><img src="pictures/game4.png" alt=""></a></div>
@@ -208,261 +263,265 @@
         <div class="leargriditem"><a href=""><img src="pictures/game7.png" alt=""></a></div>
         <div class="leargriditem"><a href=""><img src="pictures/game8.png" alt=""></a></div>
         <div class="leargriditem"><a href=""><img src="pictures/game9.png" alt=""></a></div>
-        <div class="leargriditem"><a href=""><img src="pictures/game10.png" alt=""></a></div>
-    </div>
-    <hr><br>
-    <p>Education Go! is a dynamic online platform dedicated to empowering students and educators through interactive and engaging learning resources. Our mission is to make education accessible, fun, and effective by providing a wide variety of tools, games, and tutorials that cater to different learning styles. Whether you’re a student looking to enhance your skills or a teacher seeking innovative methods to inspire your classroom, Education Go! offers a comprehensive range of content tailored to meet your educational needs. Join us on a journey of discovery and growth as we bring learning to life!</p>
-    </div>
 
-    <div class="item", id="item" style="height: 100%; bottom: 1%;">
-        <input type="text" id="searchBox" placeholder="Search games..." onkeyup="searchGames()">
-        <div id="searchResults"></div>
-        <br><br>
-        <hr>
-        <a href="1">1</a>
-        <br><br>
-        <a href="1v1.lol">1v1.LOL</a>
-        <br><br>
-        <a href="10minutestilldawn">10 Minutes Till Dawn</a>
-        <br><br>
-        <a href="2048">2048</a>
-        <br><br>
-        <a href="adanceoffireandice">A Dance of Fire And Ice</a>
-        <br><br>
-        <a href="adarkroom">A Dark Room</a>
-        <br><br>
-        <a href="adrenalinechallenge">Adrenaline Challenge</a>
-        <br><br>
-        <a href="adventuredrivers">Adventure Drivers</a>
-        <br><br>
-        <a href="asteroids">Asteroids</a>
-        <br><br>
-        <a href="astray">Astray</a>
-        <br><br>
-        <a href="backcountry">Backcountry</a>
-        <br><br>
-        <a href="badicecream">Bad Ice Cream</a>
-        <br><br>
-        <a href="badicecream2">Bad Ice Cream 2</a>
-        <br><br>
-        <a href="badicecream3">Bad Ice Cream 3</a>
-        <br><br>
-        <a href="baldis-basics-master/">Baldis Basics (NEW!)</a>
-        <br><br>
-        <a href="basketrandom">Basket Random</a>
-        <br><br>
-        <a href="bitlife">BitLife</a>
-        <br><br>
-        <a href="bounceback">Bounceback</a>
+  </div>
 
-        <br><br>
-        <a href="boxingrandom">Boxing Random</a>
-        <br><br>
-        <a href="breaklock">BreakLock</a>
-        <br><br>
-        <a href="breakout">Breakout</a>
-        <br><br>
-        <a href="chess">Chess</a>
-        <br><br>
-        <a href="chromedino">Chrome Dino</a>
-        <br><br>
-        <a href="connect3">Connect 3</a>
-        <br><br>
-        <a href="cookieclicker">Cookie Clicker</a>
-        <br><br>
-        <a href="cubefield">Cubefield</a>
-        <br><br>
-        <a href="doodlejump">Doodle Jump</a>
-        <br><br>
-        <a href="driftboss/">Drift Boss</a>
-        <br><br>
-        <a href="ducklife">Duck Life</a>
-        <br><br>
-        <a href="ducklife2">Duck Life 2</a>
-        <br><br>
-        <a href="ducklife3">Duck Life 3</a>
-        <br><br>
-        <a href="ducklife4">Duck Life 4</a>
-        <br><br>
-        <a href="edgesurf">Edge Surf</a>
+  <div class="announcements">
+    <h2>Latest Announcements</h2>
+    <p><b>1/29/2025:</b> Fmovies replaced with Popcorn movies - ad-free streaming now available!</p>
+    <p><b>1/17/2025:</b> New subdomains added for better navigation.</p>
+    <p><b>11/6/2024:</b> Poker added by request!</p>
+  </div>
 
-        <br><br>
-        <a href="evilglitch">Evil Glitch</a>
-        <br><br>
-        <a href="factoryballsforever">Factory Balls Forever</a>
-        <br><br>
-        <a href="fireboyandwatergirlintheforesttemple">Fireboy and Watergirl in the Forest Temple</a>
-        <br><br>
-        <a href="flappybird">Flappy Bird</a>
-        <br><br>
-        <a href="free-movies-and-shows/">Stream Movies and Shows Free!</a>
-        <br><br>
-        <a href="friendlyfire">Friendly Fire</a>
-        <br><br>
-        <a href="garticphone/">Gartic Phone</a>
-        <br><br>
-        <a href="geometrydash">Geometry Dash</a>
-        <br><br>
-        <a href="gettingoverit/">Getting Over it (Scratch)</a>
-        <br><br>
-        <a href="gopherkart">Gopher Kart</a>
-        <br><br>
-        <a href="granny/main.html">Granny</a>
-        <br><br>
-        <a href="hextris">Hextris</a>
-        <br><br>
-        <a href="iceagebabyadventure">Ice Age Baby Adventure</a>
-        <br><br>
-        <a href="jumpingfrogspuzzle">Jumping frogs puzzle</a>
-        <br><br>
-        <a href="konnekt">Konnekt</a>
-        <br><br>
-        <a href="krewio/">Krew.io</a>
-        <br><br>
-        <a href="krunkerio/">Krunker.io</a>
-        <br><br>
-        <a href="minecraft0.30">Minecraft 0.30</a>
-        <br><br>
-        <a href="minecraft1.3">Minecraft 1.3</a>
-        <br><br>
-        <a href="minecraft1.5.2">Minecraft 1.5.2</a>
-        <br><br>
-        <a href="minecraft1.8/EaglercraftX_1.8_u32_Offline_Signed.html">Minecraft 1.8 (NEW!)</a>
-        <br><br>
-        <a href="minecraft1.8.8/eaglercraft.1.8.8.html">Minecraft 1.8.8 (Multiplayer Only)</a>
-        <br><br>
-        <a href="motox3m2">Moto X3M 2</a>
-        <br><br>
-        <a href="ovo">OvO</a>
-        <br><br>
-        <a href="pacman">Pac-Man</a>
-        <br><br>
-        <a href="https://us-central1-proxypinterest.cloudfunctions.net/api/proxy?url=https://pinterest.com">Pinterest</a>
-        <br><br>
-        <a href="pushback">Pushback</a>
-        <br><br>
-        <a href="racer">Racer</a>
-        <br><br>
-        <a href="radiusraid">Radius Raid</a>
-        <br><br>
-        <a href="retrobowl">Retro Bowl</a>
-        <br><br>
-        <a href="retrohaunt">Retrohaunt</a>
-        <br><br>
-        <a href="riddleschool">Riddle School</a>
-        <br><br>
-        <a href="riddleschool2">Riddle School 2</a>
-        <br><br>
-        <a href="riddleschool3">Riddle School 3</a>
-        <br><br>
-        <a href="riddleschool4">Riddle School 4</a>
-        <br><br>
-        <a href="riddleschool5">Riddle School 5</a>
-        <br><br>
-        <a href="roadblocks">Roadblocks</a>
-        <br><br>
-        <a href="run3/">Run 3</a>
-        <br><br>
-        <a href="sleepingbeauty">Sleeping Beauty</a>
-        <br><br>
-        <a href="slope">Slope</a>
-        <br><br>
-        <a href="snake">Snake</a>
-        <br><br>
-        <a href="snowrider3d">Snow Rider 3D</a>
-        <br><br>
-        <a href="smashcarts/">Smash Karts</a>
-        <br><br>
-        <a href="soccerbros/">Soccer Bros</a>
-        <br><br>
-        <a href="soccerrandom">Soccer Random</a>
-        <br><br>
-        <a href="spacecompany">Space Company</a>
-        <br><br>
-        <a href="spaceinvaders">Space Invaders</a>
-        <br><br>
-        <a href="subwaysurfers/">Subway Surfers</a>
-        <br><br>
-        <a href="main.html">Shell Shockers</a>
-        <br><br>
-        <a href="tetris">Tetris</a>
-        <br><br>
-        <a href="thechromaincident">The Chroma Incident</a>
-        <br><br>
-        <a href="thereisnogame">THERE IS NO GAME!</a>
-        <br><br>
-        <a href="towermaster">Tower Master</a>
-        <br><br>
-        <a href="tunnelrush">Tunnel Rush</a>
-        <br><br>
-        <a href="underrun">Under Run</a>
-        <br><br>
-        <a href="vex3">Vex 3</a>
-        <br><br>
-        <a href="vex4">Vex 4</a>
-        <br><br>
-        <a href="vex5">Vex 5</a>
-        <br><br>
-        <a href="vex6">Vex 6</a>
-        <br><br>
-        <a href="vex7">Vex 7</a>
-        <br><br>
-        <a href="volleyrandom">Volley Random</a>
-        <br><br>
-        <a href="webretro">Webretro (retro console emulator)</a>
-        <br><br>
-        <a href="wordle_ultd/">Wordle Unlimited (NEW!)</a>
-        <br><br>
-        <a href="worldshardestgame">World's Hardest Game</a>
-        <br><br>
-        <a href="worldshardestgame2">World's Hardest Game 2</a>
-        <br><br>
-        <a href="xx142b2.exe">xx142-b2.exe</a>
-        <br><br>
-        <a href="PlayStation/PlayStation.htm">Playstation Emulator (NEW!)</a>
-        <br><br>
-        <a href="poker/">Poker</a>
-        <br><br>
-        <a href="PS2 Emulator/">PS 2 Emulator (WIP)</a>
-        <br><br>
-        <a href="VirtualXP/VirtualXP.htm">Windows XP Emulator (NEW!)</a>
-      </div>
+  <footer>
+    <p>&copy; 2025 Education Go! | Built for Students, by Students.</p>
+  </footer>
 
+  <script>
+    function searchGames() {
+      const input = document.getElementById('searchBox').value.toLowerCase();
+      const links = document.querySelectorAll('#item a');
+      const resultsDiv = document.getElementById('searchResults');
+      const addedLinks = new Set();
 
-    <script>
-function searchGames() {
-            const input = document.getElementById('searchBox').value.toLowerCase();
-            const links = document.querySelectorAll('#item a');
-            const resultsDiv = document.getElementById('searchResults');
-            const color1 = localStorage.getItem('color1') || 'red'; // Default to black if color1 is not set
-            const addedLinks = new Set(); // Track added links to avoid duplicates
+      resultsDiv.innerHTML = '';
+      resultsDiv.style.display = input ? 'flex' : 'none';
 
-            resultsDiv.innerHTML = '';
-            resultsDiv.style.color = color1; // Apply the color from localStorage
+      if (!input) return;
 
-            // If the input is empty, clear the results and return
-            if (!input) {
-                resultsDiv.style.display = 'none';
-                return;
-            } else {
-                resultsDiv.style.display = 'block';
-            }
+      let found = false;
 
-            let found = false;
-            links.forEach(link => {
-                const linkText = link.textContent.toLowerCase();
-                if (linkText.includes(input) && !addedLinks.has(linkText)) {
-                    resultsDiv.innerHTML += `<a href="${link.getAttribute('href')}" style="color:black">${link.textContent}</a><br><br>`;
-                    addedLinks.add(linkText); // Add the link to the set to avoid duplicates
-                    found = true;
-                }
-            });
-
-            if (!found) {
-                resultsDiv.innerHTML = 'No matches found.';
-            }
+      links.forEach(link => {
+        const linkText = link.textContent.toLowerCase();
+        if (linkText.includes(input) && !addedLinks.has(linkText)) {
+          const result = document.createElement('div');
+          result.className = 'search-result-item';
+          result.innerHTML = `<a href="${link.getAttribute('href')}">${link.textContent}</a>`;
+          resultsDiv.appendChild(result);
+          addedLinks.add(linkText);
+          found = true;
         }
+      });
 
-    </script>
+      if (!found) {
+        resultsDiv.innerHTML = '<p>No matches found.</p>';
+      }
+    }
+        </script>
+
+  <div class="item", id="item" style="height: 100%; bottom: 1%;">
+    <input type="text" id="searchBox" placeholder="Search games..." onkeyup="searchGames()">
+    <div id="searchResults"></div>
+    <br><br>
+    <hr>
+    <a href="1">1</a>
+    <br><br>
+    <a href="1v1.lol">1v1.LOL</a>
+    <br><br>
+    <a href="10minutestilldawn">10 Minutes Till Dawn</a>
+    <br><br>
+    <a href="2048">2048</a>
+    <br><br>
+    <a href="adanceoffireandice">A Dance of Fire And Ice</a>
+    <br><br>
+    <a href="adarkroom">A Dark Room</a>
+    <br><br>
+    <a href="adrenalinechallenge">Adrenaline Challenge</a>
+    <br><br>
+    <a href="adventuredrivers">Adventure Drivers</a>
+    <br><br>
+    <a href="asteroids">Asteroids</a>
+    <br><br>
+    <a href="astray">Astray</a>
+    <br><br>
+    <a href="backcountry">Backcountry</a>
+    <br><br>
+    <a href="badicecream">Bad Ice Cream</a>
+    <br><br>
+    <a href="badicecream2">Bad Ice Cream 2</a>
+    <br><br>
+    <a href="badicecream3">Bad Ice Cream 3</a>
+    <br><br>
+    <a href="baldis-basics-master/">Baldis Basics (NEW!)</a>
+    <br><br>
+    <a href="basketrandom">Basket Random</a>
+    <br><br>
+    <a href="bitlife">BitLife</a>
+    <br><br>
+    <a href="bounceback">Bounceback</a>
+
+    <br><br>
+    <a href="boxingrandom">Boxing Random</a>
+    <br><br>
+    <a href="breaklock">BreakLock</a>
+    <br><br>
+    <a href="breakout">Breakout</a>
+    <br><br>
+    <a href="chess">Chess</a>
+    <br><br>
+    <a href="chromedino">Chrome Dino</a>
+    <br><br>
+    <a href="connect3">Connect 3</a>
+    <br><br>
+    <a href="cookieclicker">Cookie Clicker</a>
+    <br><br>
+    <a href="cubefield">Cubefield</a>
+    <br><br>
+    <a href="doodlejump">Doodle Jump</a>
+    <br><br>
+    <a href="driftboss/">Drift Boss</a>
+    <br><br>
+    <a href="ducklife">Duck Life</a>
+    <br><br>
+    <a href="ducklife2">Duck Life 2</a>
+    <br><br>
+    <a href="ducklife3">Duck Life 3</a>
+    <br><br>
+    <a href="ducklife4">Duck Life 4</a>
+    <br><br>
+    <a href="edgesurf">Edge Surf</a>
+
+    <br><br>
+    <a href="evilglitch">Evil Glitch</a>
+    <br><br>
+    <a href="factoryballsforever">Factory Balls Forever</a>
+    <br><br>
+    <a href="fireboyandwatergirlintheforesttemple">Fireboy and Watergirl in the Forest Temple</a>
+    <br><br>
+    <a href="flappybird">Flappy Bird</a>
+    <br><br>
+    <a href="free-movies-and-shows/">Stream Movies and Shows Free!</a>
+    <br><br>
+    <a href="friendlyfire">Friendly Fire</a>
+    <br><br>
+    <a href="garticphone/">Gartic Phone</a>
+    <br><br>
+    <a href="geometrydash">Geometry Dash</a>
+    <br><br>
+    <a href="gettingoverit/">Getting Over it (Scratch)</a>
+    <br><br>
+    <a href="gopherkart">Gopher Kart</a>
+    <br><br>
+    <a href="granny/main.html">Granny</a>
+    <br><br>
+    <a href="hextris">Hextris</a>
+    <br><br>
+    <a href="iceagebabyadventure">Ice Age Baby Adventure</a>
+    <br><br>
+    <a href="jumpingfrogspuzzle">Jumping frogs puzzle</a>
+    <br><br>
+    <a href="konnekt">Konnekt</a>
+    <br><br>
+    <a href="krewio/">Krew.io</a>
+    <br><br>
+    <a href="krunkerio/">Krunker.io</a>
+    <br><br>
+    <a href="minecraft0.30">Minecraft 0.30</a>
+    <br><br>
+    <a href="minecraft1.3">Minecraft 1.3</a>
+    <br><br>
+    <a href="minecraft1.5.2">Minecraft 1.5.2</a>
+    <br><br>
+    <a href="minecraft1.8/EaglercraftX_1.8_u32_Offline_Signed.html">Minecraft 1.8 (NEW!)</a>
+    <br><br>
+    <a href="minecraft1.8.8/eaglercraft.1.8.8.html">Minecraft 1.8.8 (Multiplayer Only)</a>
+    <br><br>
+    <a href="motox3m2">Moto X3M 2</a>
+    <br><br>
+    <a href="ovo">OvO</a>
+    <br><br>
+    <a href="pacman">Pac-Man</a>
+    <br><br>
+    <a href="https://us-central1-proxypinterest.cloudfunctions.net/api/proxy?url=https://pinterest.com">Pinterest</a>
+    <br><br>
+    <a href="pushback">Pushback</a>
+    <br><br>
+    <a href="racer">Racer</a>
+    <br><br>
+    <a href="radiusraid">Radius Raid</a>
+    <br><br>
+    <a href="retrobowl">Retro Bowl</a>
+    <br><br>
+    <a href="retrohaunt">Retrohaunt</a>
+    <br><br>
+    <a href="riddleschool">Riddle School</a>
+    <br><br>
+    <a href="riddleschool2">Riddle School 2</a>
+    <br><br>
+    <a href="riddleschool3">Riddle School 3</a>
+    <br><br>
+    <a href="riddleschool4">Riddle School 4</a>
+    <br><br>
+    <a href="riddleschool5">Riddle School 5</a>
+    <br><br>
+    <a href="roadblocks">Roadblocks</a>
+    <br><br>
+    <a href="run3/">Run 3</a>
+    <br><br>
+    <a href="sleepingbeauty">Sleeping Beauty</a>
+    <br><br>
+    <a href="slope">Slope</a>
+    <br><br>
+    <a href="snake">Snake</a>
+    <br><br>
+    <a href="snowrider3d">Snow Rider 3D</a>
+    <br><br>
+    <a href="smashcarts/">Smash Karts</a>
+    <br><br>
+    <a href="soccerbros/">Soccer Bros</a>
+    <br><br>
+    <a href="soccerrandom">Soccer Random</a>
+    <br><br>
+    <a href="spacecompany">Space Company</a>
+    <br><br>
+    <a href="spaceinvaders">Space Invaders</a>
+    <br><br>
+    <a href="subwaysurfers/">Subway Surfers</a>
+    <br><br>
+    <a href="main.html">Shell Shockers</a>
+    <br><br>
+    <a href="tetris">Tetris</a>
+    <br><br>
+    <a href="thechromaincident">The Chroma Incident</a>
+    <br><br>
+    <a href="thereisnogame">THERE IS NO GAME!</a>
+    <br><br>
+    <a href="towermaster">Tower Master</a>
+    <br><br>
+    <a href="tunnelrush">Tunnel Rush</a>
+    <br><br>
+    <a href="underrun">Under Run</a>
+    <br><br>
+    <a href="vex3">Vex 3</a>
+    <br><br>
+    <a href="vex4">Vex 4</a>
+    <br><br>
+    <a href="vex5">Vex 5</a>
+    <br><br>
+    <a href="vex6">Vex 6</a>
+    <br><br>
+    <a href="vex7">Vex 7</a>
+    <br><br>
+    <a href="volleyrandom">Volley Random</a>
+    <br><br>
+    <a href="webretro">Webretro (retro console emulator)</a>
+    <br><br>
+    <a href="wordle_ultd/">Wordle Unlimited (NEW!)</a>
+    <br><br>
+    <a href="worldshardestgame">World's Hardest Game</a>
+    <br><br>
+    <a href="worldshardestgame2">World's Hardest Game 2</a>
+    <br><br>
+    <a href="xx142b2.exe">xx142-b2.exe</a>
+    <br><br>
+    <a href="PlayStation/PlayStation.htm">Playstation Emulator (NEW!)</a>
+    <br><br>
+    <a href="poker/">Poker</a>
+    <br><br>
+    <a href="PS2 Emulator/">PS 2 Emulator (WIP)</a>
+    <br><br>
+    <a href="VirtualXP/VirtualXP.htm">Windows XP Emulator (NEW!)</a>
+  </div>
+
 </body>
 </html>
