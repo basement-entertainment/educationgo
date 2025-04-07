@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>URL Bypass</title>
+<style>
+  body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+  embed {
+    width: 100%;
+    height: 100%;
+  }
+</style>
+</head>
+<body>
+<label for="url">Paste join url here:</label>
+<input id="url" type="text" placeholder="https://garticphone.com" >
+<button onclick="toggleFullScreen()">Toggle Fullscreen</button>
+<embed id="embed" src="https://garticphone.com" type="text/html">
+
+<script>
+document.getElementById("url").addEventListener("change", function() {
+  var embed = document.getElementById("embed");
+  var url = document.getElementById("url").value;
+  
+  // Check if URL starts with 'https://garticphone.com'
+  if (url.startsWith("https://garticphone.com")) {
+    embed.setAttribute("src", url);
+  } else {
+    alert("URL must start with 'https://garticphone.com'");
+  }
+});
+
+function toggleFullScreen() {
+  var embed = document.getElementById("embed");
+  
+  if (!document.fullscreenElement) {
+    embed.requestFullscreen().catch(err => {
+      alert(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
+    });
+  } else {
+    document.exitFullscreen();
+  }
+}
+</script>
+
+</body>
+</html>

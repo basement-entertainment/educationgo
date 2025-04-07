@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="description" content="Educational Games for learning K-12 students!">
+    <meta name="keywords" content="educational games, learning games, HTML5 games, school-friendly games, online learning, interactive learning, math games, logic puzzles, problem-solving, educational technology, student resources, educational entertainment, fun learning activities, safe for school, unblocked games">
+    <meta name="author" content="Educators Rising">
+    <meta charset="UTF-8">
+    <meta name="icon" >
+    <link rel="icon" type="image/x-icon" href="pictures/book.png">
+    <title>EducationGo!</title>
+</head>
+<body>
+    <style>
+        html {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        .heading {
+            text-align: center;
+            padding: 20%;
+            align-items: center;
+            align-content: center;
+            align-self: center;
+            
+        }
+        .searchBox {
+            position: fixed;
+            left: 25%;
+            top: 4%;
+            border-radius: 10px;
+            width: 50%;
+            text-align: center;
+
+        }
+        img.book {
+            width: 30%;
+        }
+        .learngrid {
+            display: grid;
+            border: 5px solid rgba(83, 83, 83, 0.8);
+            grid-template-columns: auto auto;
+        }
+        .learngriditem{
+            padding: 10%;
+            border: 1px solid rgba(0, 0, 0, 0.8);
+        }
+
+ 
+        a img{
+            width: 100%;
+            height: 100%;
+            transition-duration: 500ms;
+        }
+
+        a img:hover{
+            scale: 1.2;
+        }
+
+        #item {
+            display: none;
+        }
+        select {
+            text-align: center;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: larger;
+            width: 100%;
+            border-bottom: 2px solid rgba(0, 0, 0, 0.8);
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            margin-bottom: 5px;
+        }
+        div.left {
+            text-align: left;
+        }
+        .headbar {
+            position: fixed;
+        }
+        .headbar img {
+            width: 20%;
+        }
+        div h3 {
+            margin-left: 2%;
+        }
+        a {
+            text-decoration: none;
+        }
+        .contact {
+            transition-duration: 500ms;
+        }
+        .contact:target {
+            opacity: 0;
+            scale: 0.2;
+            
+        }
+        .contact:target ::after{
+            display: none;
+        }
+
+        
+.contact {
+  left: 25%;
+  top: 10%;
+  position: fixed;
+  width: 60%;
+  height: 80%;
+  background-color: rgb(99, 99, 99);
+  align-items: center;
+  align-content: center;
+  transition-duration: 500ms;
+  z-index: 1;
+  text-align: center;
+  
+}
+.contact a{
+    color: black;
+}
+
+.contact h1 {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.square {
+    width: 14%;
+    height: 17%;
+    background-color: bisque;
+    left: -2%;
+    top: 85%;
+    z-index: -1;
+    position: absolute;
+    transition-duration: 600ms;
+    transform: translateX(-100%);
+}
+.headbar a:hover + .square {
+    transform: translateX(0);
+}
+    </style>
+    <div class="headbar">
+        <img src="pictures/book.png" alt="">
+        <div class="left"><h3>Education Go!</h3></div>
+       
+        <div id="searchResults"></div>
+        <a href="index.html" style="color: black;">Home</a>
+        <div class="square"></div>
+    </div>
+
+   
+    <div class="heading">
+
+        <img src="pictures/book.png" alt="" class="book">
+    <h1>About</h1>
+    <p>An educational platform for students learning though fun games!</p>
+    <p>Free learning games K-12!</p>
+
+<br>
+
+    <hr><br>
+    <h2>Summary</h2>
+    <p>Education Go! is a dynamic online platform dedicated to empowering students and educators through interactive and engaging learning resources. Our mission is to make education accessible, fun, and effective by providing a wide variety of tools, games, and tutorials that cater to different learning styles. Whether you’re a student looking to enhance your skills or a teacher seeking innovative methods to inspire your classroom, Education Go! offers a comprehensive range of content tailored to meet your educational needs. Join us on a journey of discovery and growth as we bring learning to life!</p>
+    <hr>
+    <br>
+    <h2>"Here every step of the way"</h2>
+    <p>At Education Go!, our motto reflects our unwavering commitment to your learning journey. We are with you from the first steps of discovery to the moments of mastery, providing guidance, resources, and support whenever you need it. Learning is a lifelong adventure, and no matter where you are on that path, we’re here to help you navigate it with confidence. From challenges to triumphs, we’re dedicated to being your trusted companion, ensuring you always have the tools and encouragement to keep moving forward.</p>
+    <hr><br>
+    <h2>Our Pledge</h2>
+    <p>At Education Go!, we are committed to fostering an inclusive and enriching educational environment for learners of all ages. We pledge to provide high-quality, accessible resources that inspire curiosity, encourage critical thinking, and empower students to reach their full potential. We promise to continuously evolve our platform to meet the changing needs of both students and educators, ensuring that learning remains engaging, relevant, and fun. Our dedication to education goes beyond the classroom — we are here to support every step of your learning journey with passion, innovation, and integrity.
+
+    </p>
+    <hr>
+    <br>
+    <h2>Why We Do What We Do</h2>
+    <p>At Education Go!, we believe that education is the key to unlocking limitless potential. Our passion stems from the desire to create an engaging, accessible learning environment that inspires curiosity and empowers individuals to succeed. We understand that every student learns differently, which is why we’re dedicated to providing diverse resources that meet a variety of needs. By combining creativity with effective educational tools, we aim to make learning enjoyable, meaningful, and accessible for everyone. We do what we do because we know that when students are excited to learn, their possibilities are endless.
+
+    </p>
+    <hr><br>
+    <h2>What does this mean for you?</h2>
+    <p>At Education Go!, it means that your learning experience is at the heart of everything we do. Whether you’re a student looking for new ways to grasp challenging concepts or an educator seeking fresh tools to engage your classroom, we’re here to support you. With a wealth of interactive resources, educational games, and customizable tools, you’ll have everything you need to make learning fun, relevant, and effective. For you, it means access to a platform that prioritizes your growth, adapts to your unique needs, and makes education exciting and accessible, every step of the way.</p>
+
+</div>
+
+   

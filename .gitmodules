@@ -1,0 +1,12 @@
+[submodule "PlayStation"]
+	path = PlayStation
+	url = https://github.com/lrusso/PlayStation.git
+[submodule "VirtualXP"]
+	path = VirtualXP
+	url = https://github.com/lrusso/VirtualXP.git
+[submodule "Play-"]
+	path = Play-
+	url = https://github.com/jpd002/Play-.git
+[submodule "shellshocker"]
+	path = shellshocker
+	url = https://github.com/wreiske/shellshocker.git
