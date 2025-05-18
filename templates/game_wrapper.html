@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/x-icon" href="../static/book.png">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
+  <title>{{ game }}</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+    }
+    .navbar {
+      background: #ffffff;
+      color: white;
+      padding: 10px;
+      text-align: center;
+    }
+    iframe {
+      flex-grow: 1;
+      border: none;
+      width: 100%;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #eee;
+      margin-top: 3rem;
+    }
+    body {
+      font-family: 'Rubik', sans-serif;
+      background-color: #fafafa;
+      color: var(--text-color);
+      line-height: 1.6;
+      padding-top: 80px;
+    }
+
+    .headbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: white;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 999;
+      transition-duration: 500ms;
+    }
+    img{
+        height: 100px;
+    }
+  </style>
+</head>
+<body>
+    <div class="heading">
+        <img src="../static/book.png" alt="Book icon" class="book">
+        <h1>Education Go!</h1>
+        <p>Fun educational games for students of all ages!</p>
+      </div>
+  <div class="navbar">
+    <h2>{{ game|capitalize }} Game</h2>
+
+  </div>
+  <button onclick="toggleFullScreen()">Toggle Fullscreen</button>
+  <iframe src="{{ game_url }}" id="embed"></iframe>
+
+
+  <style>
+
+    .dock {
+      position: fixed;
+      bottom: 20px;
+      display: flex;
+      gap: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 10px 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+      z-index: 1000;
+      transform: scale(1.2);
+    }
+
+    .dock a {
+      display: block;
+      width: 50px;
+      height: 50px;
+      transition: transform 0.2s ease;
+
+    }
+
+    .dock a img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      transition: transform 0.2s ease;
+    }
+
+    .dock a:hover img {
+      transform: scale(1.5);
+    }
+
+    /* Optional: Smooth scaling for neighboring icons */
+    .dock a:hover ~ a img,
+    .dock a:has(~ a:hover) img {
+      transform: scale(1.2);
+    }
+
+    .cont{
+      width: 100%;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+    }
+  </style>
+
+<script>
+    function toggleFullScreen() {
+      var embed = document.getElementById("embed");
+      if (!document.fullscreenElement) {
+        embed.requestFullscreen().catch(err => {
+          alert(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
+        });
+      } else {
+        document.exitFullscreen();
+      }
+    }
+    </script>
+
+  <div class="cont">
+    <div class="dock">
+
+        <a href="/"><img src="https://img.icons8.com/ios-filled/50/home.png" alt="Home"></a>
+      <a href="#"><img src="https://img.icons8.com/?size=100&id=7317&format=png&color=000000" alt="Search"></a>
+      <a href="#"><img src="https://img.icons8.com/ios-filled/50/settings.png" alt="Settings"></a>
+      <a href="#"><img src="https://img.icons8.com/ios-filled/50/user.png" alt="User"></a>
+      <a href="#"><img src="https://img.icons8.com/?size=100&id=aCfAk9QBX2mZ&format=png&color=000000" alt="Info"></a>
+
+
+    </div>
+  </div>
+</body>
+</html>
